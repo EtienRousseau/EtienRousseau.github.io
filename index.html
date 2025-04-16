@@ -4,150 +4,309 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Understand the Québec Accent with Etien !</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    html {
-      scroll-behavior: smooth;
-    }
     body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #212529;
-    }
-    header {
-      background: #ffffff;
-      padding: 1rem;
-      text-align: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-      color: #ff3d00;
-    }
-    header p {
-      font-size: 1rem;
-      color: #6c757d;
-      margin: 0.25rem 0 0;
-    }
-    section {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    iframe {
-      width: 100%;
-      height: 56.25vw;
-      max-height: 500px;
-      border: none;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-    h2 {
-      color: #343a40;
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .highlight {
-      color: #ff3d00;
-      font-weight: 600;
-    }
-    .section-container {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
-    .bonus, .guarantee {
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 1.5rem;
-      background: #fff;
-      border-left: 5px solid #ff3d00;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-    .button {
-      display: inline-block;
-      margin: 1rem;
-      background: #ff3d00;
-      color: #fff;
-      text-decoration: none;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      font-size: 1.1rem;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-    .button:hover {
-      background: #e03400;
-    }
-    .button-container {
-      text-align: center;
-      max-width: 960px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      color: #2c3e50;
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
     }
-    .button-group {
+
+    section, .section-container {
+      background: linear-gradient(135deg, #ffffff, #f8f9ff);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
       width: 100%;
-      margin-bottom: 2rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      transition: transform 0.3s ease;
     }
-    .button-label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: bold;
-      color: #343a40;
+
+    section:hover {
+      transform: translateY(-5px);
     }
-    .testimonials {
-      margin-top: 4rem;
-    }
-    .carousel-container {
+
+    header {
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto 1rem;
+      padding: 40px 20px;
+      background-image: url('Chateau_Frontenac,_Quebec_City.jpg');
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px;
+      position: relative;
       overflow: hidden;
     }
-    .carousel {
+
+    /* Add an overlay for better text readability */
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin: 10px 0;
+    }
+
+    body.dark header h1,
+    body.dark header p {
+      color: white;
+    }
+
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      color: #34495e;
+      font-size: 2.2em;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Roboto Slab', serif;
+      color: #e67e22;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    .button {
+      font-family: 'Roboto', sans-serif;
+      padding: 15px 30px;
+      margin: 10px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #3498db, #2980b9);
+      color: white;
+      cursor: pointer;
+      font-size: 1em;
+      font-weight: 700;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+      animation: pulse 2s infinite;
+    }
+
+    .button:hover {
+      background: linear-gradient(135deg, #2980b9, #2573a7);
+      transform: scale(1.05) translateY(-2px);
+    }
+
+    iframe {
+      width: 100%;
+      height: 400px;
+      max-width: 800px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      margin: 20px auto;
+      display: block;
+    }
+
+    .testimonials .carousel {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1rem;
-      padding: 1rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
+
     .testimonial {
-      flex: none;
-      background: #ffffff;
-      padding: 1rem;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      background: linear-gradient(135deg, #ffffff, #f8f9ff);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      border: 2px solid transparent;
+      background-clip: padding-box;
     }
+
+    .testimonial:hover {
+      transform: translateY(-5px);
+    }
+
     .stars {
-      color: #ffc107;
+      color: #f1c40f;
+      text-shadow: 0 0 5px rgba(241, 196, 15, 0.3);
+      margin: 10px 0;
+    }
+
+    .bonus {
+      background: linear-gradient(135deg, #fff6e5, #ffe8cc);
+      margin: 20px 0;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(52, 152, 219, 0.1);
+      position: relative;
+      overflow: hidden;
+      animation: float 6s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    .bonus::before {
+      content: '🎮';
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      font-size: 80px;
+      opacity: 0.1;
+      transform: rotate(15deg);
+    }
+
+    .bonus::after {
+      content: '✨';
+      position: absolute;
+      bottom: -15px;
+      left: -15px;
+      font-size: 60px;
+      opacity: 0.1;
+      transform: rotate(-15deg);
+    }
+
+    .bonus:hover {
+      transform: translateY(-5px);
+    }
+
+    .bonus h2 {
+      margin-top: 0;
+      font-size: 2em;
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .bonus a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    .bonus a:hover {
+      color: #2980b9;
+    }
+
+    body.dark .bonus {
+      background: linear-gradient(135deg, #34495e, #2c3e50);
+    }
+
+    body.dark .bonus h2 {
+      background: linear-gradient(90deg, #3498db, #2ecc71);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    body.dark .bonus a {
+      color: #f1c40f;
+    }
+
+    body.dark .bonus a:hover {
+      color: #f39c12;
+    }
+
+    /* Dark mode styles */
+    body.dark {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: #ecf0f1;
+    }
+
+    body.dark section,
+    body.dark .section-container,
+    body.dark .testimonial,
+    body.dark .bonus,
+    body.dark .guarantee {
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+    }
+
+    body.dark h1 {
+      color: #f1c40f;
+    }
+
+    body.dark h2 {
+      color: #e67e22;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: #3498db;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    body.dark #theme-toggle {
+      color: #ecf0f1;
+    }
+
+    /* Add fun animations */
+    @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+        100% { transform: translateY(0px); }
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    /* Add highlight effect for What You Get section */
+    .highlight {
+        color: #e67e22;
+        font-weight: bold;
+        position: relative;
+        z-index: 1;
+    }
+
+    .highlight::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #f1c40f, #f39c12);
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+
+    li:hover .highlight::after {
+        transform: scaleX(1);
     }
   </style>
 </head>
 <body>
+  <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
   <header>
     <h1>Understand the Québec Accent with Etien !</h1>
-    <p>Speak like a local, understand everything, and feel confident in Québec.</p>
+    <p>Speak naturally, understand everything, and feel confident in Québec.</p>
   </header>
 
   <section>
@@ -172,8 +331,9 @@
 
   <div class="section-container">
     <div class="bonus">
-      <h2>Limited-Time Bonus</h2>
-      <p><strong>🎁 Free 1-on-1 Strategy Call (15 min):</strong> Before your first lesson, get a personalized plan to reach Québec French fluency faster — only for the next 5 students.</p>
+      <h2>Free Bonus</h2>
+      <p><strong>🎮 Practice with Our Flashcard Game!</strong></p>
+      <p>Start learning Québec French right away with our <a href="https://quebecfrench.ca/FlashCard/" target="_blank">interactive flashcard game</a>. Practice pronunciation, vocabulary, and common expressions at your own pace.</p>
     </div>
   </div>
 
@@ -201,7 +361,6 @@
     </div>
   </div>
 
-
   <div class="button-container">
     <div class="button-group">
       <span class="button-label">Try a Free Trial Session (15 minutes):</span>
@@ -215,5 +374,18 @@
       <a class="button" href="https://calendly.com/etienr/1-hour-quebec-french-with-etien?back=1">1 Hour</a>
     </div>
   </div>
+
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.textContent = document.body.classList.contains('dark') ? 'Light Theme' : 'Dark Theme';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.textContent = 'Dark Theme';
+    });
+  </script>
 </body>
 </html>
