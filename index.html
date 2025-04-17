@@ -201,10 +201,18 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
       text-decoration: none;
       font-weight: bold;
       transition: color 0.3s ease;
+      padding: 10px 15px;
+      display: inline-block;
+      margin: 5px 0;
+      font-size: 1.1em;
+      border-radius: 6px;
+      background-color: rgba(52, 152, 219, 0.1);
     }
 
     .bonus a:hover {
       color: #2980b9;
+      background-color: rgba(52, 152, 219, 0.2);
+      transform: translateY(-2px);
     }
 
     body.dark .bonus {
@@ -252,15 +260,34 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
       position: fixed;
       top: 20px;
       right: 20px;
-      background: transparent;
-      border: none;
-      color: #2c3e50; /* Changed from #3498db to darker blue */
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      color: #2c3e50;
       cursor: pointer;
       font-weight: bold;
+      padding: 8px 16px;
+      z-index: 10000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    #theme-toggle:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     }
 
     body.dark #theme-toggle {
+      background: rgba(44, 62, 80, 0.9);
       color: #ecf0f1;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      #theme-toggle {
+        padding: 6px 12px;
+        font-size: 0.9em;
+      }
     }
 
     /* Add fun animations */
@@ -441,8 +468,10 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
   <div class="section-container">
     <div class="bonus">
       <h2>Free Bonus</h2>
-      <p><strong>🎮 Practice with Our Flashcard Game!</strong></p>
-      <p>Start learning Québec French right away with our <a href="https://quebecfrench.ca/FlashCard/" target="_blank">interactive flashcard game</a>. Practice pronunciation, vocabulary, and common expressions at your own pace.</p>
+      <p><strong>🎮 Start Playing Now!</strong></p>
+      <a href="https://quebecfrench.ca/FlashCard/" target="_blank">Try Our Interactive Flashcard Game →</a>
+      <p><strong>📺 Learn On YouTube</strong></p>
+      <a href="https://www.youtube.com/@QuebecFrench" target="_blank">Watch Free Video Lessons →</a>
     </div>
   </div>
 
