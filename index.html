@@ -8,7 +8,7 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #74ebd5, #acb6e5);
+      background: linear-gradient(to right, #3498db, #ecf0f1, #3498db);
       color: #2c3e50;
       display: flex;
       flex-direction: column;
@@ -19,7 +19,7 @@
     }
 
     section, .section-container {
-      background: linear-gradient(135deg, #ffffff, #f8f9ff);
+      background: linear-gradient(135deg, #ffffff, #f5f9ff);
       padding: 40px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -40,8 +40,7 @@
       width: 100%;
       margin: 0 auto 1rem;
       padding: 40px 20px;
-     background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRousseau.github.io/main/Chateau_Frontenac%2C_Quebec_City.jpg');
-
+background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRousseau.github.io/main/Chateau_Frontenac%2C_Quebec_City.jpg');
       background-size: cover;
       background-position: center;
       border-radius: 20px;
@@ -133,7 +132,7 @@
     }
 
     .testimonial {
-      background: linear-gradient(135deg, #ffffff, #f8f9ff);
+      background: linear-gradient(135deg, #ffffff, #f5f9ff);
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -153,7 +152,7 @@
     }
 
     .bonus {
-      background: linear-gradient(135deg, #fff6e5, #ffe8cc);
+      background: linear-gradient(135deg, #fff9f0, #fff2e0);
       margin: 20px 0;
       padding: 30px;
       border-radius: 16px;
@@ -229,7 +228,7 @@
 
     /* Dark mode styles */
     body.dark {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
+      background: linear-gradient(to right, #1a2634, #2980b9, #1a2634);
       color: #ecf0f1;
     }
 
@@ -255,7 +254,7 @@
       right: 20px;
       background: transparent;
       border: none;
-      color: #3498db;
+      color: #2c3e50; /* Changed from #3498db to darker blue */
       cursor: pointer;
       font-weight: bold;
     }
@@ -300,6 +299,115 @@
 
     li:hover .highlight::after {
         transform: scaleX(1);
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+        body {
+            padding: 10px;
+        }
+
+        section, .section-container {
+            padding: 25px;
+            margin: 1rem auto;
+        }
+
+        header {
+            padding: 30px 15px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+        }
+
+        h2 {
+            font-size: 1.5em;
+        }
+
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .button {
+            width: 100%;
+            max-width: 300px;
+            margin: 8px 0;
+            padding: 12px 20px;
+            font-size: 0.95em;
+        }
+
+        .testimonial {
+            width: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+            padding: 15px;
+            font-size: 0.9em;
+        }
+
+        .testimonials .carousel {
+            display: grid;
+            grid-template-columns: 1fr;
+            max-width: 400px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+
+        .bonus {
+            padding: 20px;
+        }
+
+        .bonus h2 {
+            font-size: 1.6em;
+        }
+
+        .bonus::before {
+            font-size: 60px;
+        }
+
+        .bonus::after {
+            font-size: 40px;
+        }
+
+        iframe {
+            height: 300px;
+        }
+
+        #theme-toggle {
+            top: 10px;
+            right: 10px;
+            font-size: 0.9em;
+        }
+
+        ul {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        li {
+            margin-bottom: 15px;
+        }
+    }
+
+    /* Small phone adjustments */
+    @media (max-width: 380px) {
+        h1 {
+            font-size: 1.6em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+        }
+
+        .button {
+            font-size: 0.9em;
+            padding: 10px 15px;
+        }
+
+        iframe {
+            height: 250px;
+        }
     }
   </style>
 </head>
