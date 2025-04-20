@@ -285,8 +285,107 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
 
     @media (max-width: 768px) {
       #theme-toggle {
+        top: 10px;
+        right: 10px;
         padding: 6px 12px;
         font-size: 0.9em;
+      }
+
+      .floating-cta {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 40px);
+        max-width: 300px;
+        text-align: center;
+        justify-content: center;
+        padding: 12px 20px;
+        font-size: 1em;
+      }
+
+      .floating-cta:hover {
+        transform: translateX(-50%) translateY(-2px);
+      }
+
+      body {
+        padding: 10px;
+      }
+
+      section, .section-container {
+        padding: 25px;
+        margin: 1rem auto;
+      }
+
+      header {
+        padding: 30px 15px;
+      }
+
+      h1 {
+        font-size: 1.8em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      .button-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .button {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px 0;
+        padding: 12px 20px;
+        font-size: 0.95em;
+      }
+
+      .testimonial {
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 15px;
+        font-size: 0.9em;
+      }
+
+      .testimonials .carousel {
+        display: grid;
+        grid-template-columns: 1fr;
+        max-width: 400px;
+        margin: 0 auto;
+        gap: 15px;
+      }
+
+      .bonus {
+        padding: 20px;
+      }
+
+      .bonus h2 {
+        font-size: 1.6em;
+      }
+
+      .bonus::before {
+        font-size: 60px;
+      }
+
+      .bonus::after {
+        font-size: 40px;
+      }
+
+      iframe {
+        height: 300px;
+      }
+
+      ul {
+        padding-left: 20px;
+        text-align: left;
+      }
+
+      li {
+        margin-bottom: 15px;
       }
     }
 
@@ -329,95 +428,6 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
     }
 
     /* Mobile responsive styles */
-    @media (max-width: 768px) {
-        body {
-            padding: 10px;
-        }
-
-        section, .section-container {
-            padding: 25px;
-            margin: 1rem auto;
-        }
-
-        header {
-            padding: 30px 15px;
-        }
-
-        h1 {
-            font-size: 1.8em;
-        }
-
-        h2 {
-            font-size: 1.5em;
-        }
-
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .button {
-            width: 100%;
-            max-width: 300px;
-            margin: 8px 0;
-            padding: 12px 20px;
-            font-size: 0.95em;
-        }
-
-        .testimonial {
-            width: 100%;
-            margin: 0 auto;
-            box-sizing: border-box;
-            padding: 15px;
-            font-size: 0.9em;
-        }
-
-        .testimonials .carousel {
-            display: grid;
-            grid-template-columns: 1fr;
-            max-width: 400px;
-            margin: 0 auto;
-            gap: 15px;
-        }
-
-        .bonus {
-            padding: 20px;
-        }
-
-        .bonus h2 {
-            font-size: 1.6em;
-        }
-
-        .bonus::before {
-            font-size: 60px;
-        }
-
-        .bonus::after {
-            font-size: 40px;
-        }
-
-        iframe {
-            height: 300px;
-        }
-
-        #theme-toggle {
-            top: 10px;
-            right: 10px;
-            font-size: 0.9em;
-        }
-
-        ul {
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        li {
-            margin-bottom: 15px;
-        }
-    }
-
-    /* Small phone adjustments */
     @media (max-width: 380px) {
         h1 {
             font-size: 1.6em;
@@ -434,6 +444,42 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
 
         iframe {
             height: 250px;
+        }
+    }
+
+    .floating-cta {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: linear-gradient(135deg, #F2A65A, #C76C42);
+        color: white;
+        padding: 12px 24px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: bold;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .floating-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    body.dark .floating-cta {
+        background: linear-gradient(135deg, #4E7461, #79A9D1);
+    }
+
+    @media (max-width: 768px) {
+        .floating-cta {
+            bottom: 10px;
+            right: 10px;
+            padding: 10px 20px;
+            font-size: 0.9em;
         }
     }
   </style>
@@ -470,6 +516,8 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
       <h2>Free Bonus</h2>
       <p><strong>🎮 Start Playing Now!</strong></p>
       <a href="https://quebecfrench.ca/FlashCard/" target="_blank">Try Our Interactive Flashcard Game →</a>
+      <p><strong>🤖 Chat with GLOT</strong></p>
+      <a href="https://quebecfrench.ca/Glot/" target="_blank">Practice with Our AI Language Assistant →</a>
       <p><strong>📺 Learn On YouTube</strong></p>
       <a href="https://www.youtube.com/@QuebecFrench" target="_blank">Watch Free Video Lessons →</a>
     </div>
@@ -512,6 +560,10 @@ background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRous
       <a class="button" href="https://calendly.com/etienr/1-hour-quebec-french-with-etien?back=1">1 Hour</a>
     </div>
   </div>
+
+  <a href="https://calendly.com/etienr/quebec-french-with-etien-clone?back=1&month=2025-04" class="floating-cta" target="_blank">
+    📅 Book Now
+  </a>
 
   <script>
     function toggleTheme() {
