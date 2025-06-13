@@ -8,569 +8,465 @@
   <style>
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(to right, #3498db, #ecf0f1, #3498db);
-      color: #2c3e50;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
+      background: #f7f8fa;
+      color: #222;
       margin: 0;
-      padding: 20px;
+      padding: 0;
+      min-height: 100vh;
     }
-
-    section, .section-container {
-      background: linear-gradient(135deg, #ffffff, #f5f9ff);
-      padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 100%;
-      max-width: 600px;
-      margin: 2rem auto;
-      transition: transform 0.3s ease;
-    }
-
-    section:hover {
-      transform: translateY(-5px);
-    }
-
-    header {
-      text-align: center;
-      max-width: 800px;
-      width: 100%;
-      margin: 0 auto 1rem;
-      padding: 40px 20px;
-background-image: url('https://raw.githubusercontent.com/EtienRousseau/EtienRousseau.github.io/main/Chateau_Frontenac%2C_Quebec_City.jpg');
-      background-size: cover;
-      background-position: center;
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Add an overlay for better text readability */
-    header::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0, 0, 0, 0.4);
-      z-index: 1;
-    }
-
-    header h1, header p {
-      position: relative;
-      z-index: 2;
-      color: white;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    header p {
-      font-size: 1.2em;
-      margin: 10px 0;
-    }
-
-    body.dark header h1,
-    body.dark header p {
-      color: white;
-    }
-
-    h1 {
-      font-family: 'Roboto Slab', serif;
-      color: #34495e;
-      font-size: 2.2em;
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-family: 'Roboto Slab', serif;
-      color: #e67e22;
-      font-size: 1.8em;
-      font-weight: 700;
-    }
-
-    .button {
-      font-family: 'Roboto', sans-serif;
-      padding: 15px 30px;
-      margin: 10px;
-      border: none;
-      border-radius: 8px;
-      background: linear-gradient(135deg, #3498db, #2980b9);
-      color: white;
-      cursor: pointer;
-      font-size: 1em;
-      font-weight: 700;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-      transition: background-color 0.3s ease, transform 0.2s ease;
-      text-decoration: none;
-      display: inline-block;
-      animation: pulse 2s infinite;
-    }
-
-    .button:hover {
-      background: linear-gradient(135deg, #2980b9, #2573a7);
-      transform: scale(1.05) translateY(-2px);
-    }
-
-    iframe {
-      width: 100%;
-      height: 400px;
-      max-width: 800px;
-      border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-      margin: 20px auto;
+    .main-container {
+      max-width: 900px;
+      margin: 40px auto 0 auto;
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0 0 32px 0;
       display: block;
     }
-
-    .testimonials .carousel {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+    header {
+      display: block;
+      background: none;
+      box-shadow: none;
+      padding: 0;
+      margin: 0 0 24px 0;
+      border-radius: 0;
+      max-width: 100%;
+      width: 100%;
+      text-align: left;
+      position: static;
     }
-
-    .testimonial {
-      background: linear-gradient(135deg, #ffffff, #f5f9ff);
-      padding: 20px;
+    h1 {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2.7em;
+      font-weight: 800;
+      color: #222;
+      margin: 0 0 18px 0;
+      text-align: center;
+      white-space: normal;
+      overflow: visible;
+      text-overflow: unset;
+    }
+    .subtitle {
+      font-size: 1.25em;
+      color: #666;
+      margin-bottom: 18px;
+      font-weight: 400;
+      text-align: left;
+      line-height: 1.5;
+      max-width: 100%;
+    }
+    .cta-btn {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      margin: 24px auto 0 auto;
+      padding: 22px 0;
+      font-size: 1.25em;
+      font-weight: 700;
+      background: linear-gradient(90deg, #2e7cf6 0%, #00c6fb 100%);
+      color: #fff;
+      border: none;
       border-radius: 12px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      border: 2px solid transparent;
-      background-clip: padding-box;
+      box-shadow: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      letter-spacing: 0.5px;
+      text-align: center;
     }
-
-    .testimonial:hover {
-      transform: translateY(-5px);
+    .cta-btn:hover {
+      background: linear-gradient(90deg, #2361c6 0%, #009dbb 100%);
+      transform: translateY(-2px) scale(1.03);
     }
-
+    section, .section-container {
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      margin: 32px 0 0 0;
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+      transition: none;
+    }
+    h2 {
+      font-family: 'Roboto Slab', serif;
+      color: #2e7cf6;
+      font-size: 1.3em;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 18px;
+      letter-spacing: 0;
+      text-align: center;
+    }
+    ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    li {
+      margin-bottom: 16px;
+      font-size: 1.08em;
+      line-height: 1.6;
+    }
+    .highlight {
+      color: #2e7cf6;
+      font-weight: 700;
+    }
+    .testimonials .carousel {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .testimonial {
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      font-size: 1em;
+      color: #222;
+      border: none;
+    }
     .stars {
       color: #f1c40f;
-      text-shadow: 0 0 5px rgba(241, 196, 15, 0.3);
-      margin: 10px 0;
-    }
-
-    .bonus {
-      background: linear-gradient(135deg, #fff9f0, #fff2e0);
-      margin: 20px 0;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 25px rgba(52, 152, 219, 0.1);
-      position: relative;
-      overflow: hidden;
-      animation: float 6s ease-in-out infinite;
-      transition: transform 0.3s ease;
-    }
-
-    .bonus::before {
-      content: '🎮';
-      position: absolute;
-      top: -15px;
-      right: -15px;
-      font-size: 80px;
-      opacity: 0.1;
-      transform: rotate(15deg);
-    }
-
-    .bonus::after {
-      content: '✨';
-      position: absolute;
-      bottom: -15px;
-      left: -15px;
-      font-size: 60px;
-      opacity: 0.1;
-      transform: rotate(-15deg);
-    }
-
-    .bonus:hover {
-      transform: translateY(-5px);
-    }
-
-    .bonus h2 {
-      margin-top: 0;
-      font-size: 2em;
-      background: linear-gradient(90deg, #3498db, #2ecc71);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .bonus a {
-      color: #3498db;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s ease;
-      padding: 10px 15px;
-      display: inline-block;
-      margin: 5px 0;
       font-size: 1.1em;
-      border-radius: 6px;
-      background-color: rgba(52, 152, 219, 0.1);
+      margin: 6px 0;
     }
-
+    .guarantee {
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      font-size: 1em;
+      color: #222;
+      border: none;
+      text-align: left;
+      margin-top: 32px;
+    }
+    .bonus {
+      background: none;
+      border-radius: 0;
+      box-shadow: none;
+      padding: 0;
+      font-size: 1em;
+      color: #222;
+      border: none;
+      text-align: left;
+      margin-bottom: 0;
+      margin-top: 32px;
+    }
+    .bonus h2 {
+      color: #00b8d9;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+      background: none;
+      -webkit-background-clip: unset;
+      background-clip: unset;
+    }
+    .bonus a {
+      color: #2e7cf6;
+      background: none;
+      font-weight: 700;
+      text-decoration: underline;
+      padding: 0;
+      border-radius: 0;
+      font-size: 1em;
+      margin: 0;
+      transition: color 0.2s;
+    }
     .bonus a:hover {
-      color: #2980b9;
-      background-color: rgba(52, 152, 219, 0.2);
-      transform: translateY(-2px);
+      color: #2361c6;
+      background: none;
+      transform: none;
     }
-
-    body.dark .bonus {
-      background: linear-gradient(135deg, #34495e, #2c3e50);
-    }
-
-    body.dark .bonus h2 {
-      background: linear-gradient(90deg, #3498db, #2ecc71);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    body.dark .bonus a {
-      color: #f1c40f;
-    }
-
-    body.dark .bonus a:hover {
-      color: #f39c12;
-    }
-
-    /* Dark mode styles */
-    body.dark {
-      background: linear-gradient(to right, #1a2634, #2980b9, #1a2634);
-      color: #ecf0f1;
-    }
-
-    body.dark section,
-    body.dark .section-container,
-    body.dark .testimonial,
-    body.dark .bonus,
-    body.dark .guarantee {
-      background: linear-gradient(135deg, #2c3e50, #34495e);
-    }
-
-    body.dark h1 {
-      color: #f1c40f;
-    }
-
-    body.dark h2 {
-      color: #e67e22;
-    }
-
     #theme-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid rgba(0, 0, 0, 0.1);
-      border-radius: 8px;
-      color: #2c3e50;
-      cursor: pointer;
-      font-weight: bold;
-      padding: 8px 16px;
-      z-index: 10000;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      display: none;
     }
-
-    #theme-toggle:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    .video-center {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
-
-    body.dark #theme-toggle {
-      background: rgba(44, 62, 80, 0.9);
-      color: #ecf0f1;
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    @media (max-width: 768px) {
-      #theme-toggle {
-        top: 10px;
-        right: 10px;
-        padding: 6px 12px;
-        font-size: 0.9em;
+    @media (max-width: 900px) {
+      .main-container {
+        padding: 0 4vw 18px 4vw;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        max-width: 100vw;
       }
-
-      .floating-cta {
-        position: fixed;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 40px);
-        max-width: 300px;
-        text-align: center;
-        justify-content: center;
-        padding: 12px 20px;
-        font-size: 1em;
-      }
-
-      .floating-cta:hover {
-        transform: translateX(-50%) translateY(-2px);
-      }
-
-      body {
-        padding: 10px;
-      }
-
-      section, .section-container {
-        padding: 25px;
-        margin: 1rem auto;
-      }
-
-      header {
-        padding: 30px 15px;
-      }
-
       h1 {
-        font-size: 1.8em;
+        font-size: 2em;
+        text-align: center;
       }
-
-      h2 {
-        font-size: 1.5em;
+      .video-center {
+        padding-left: 0;
+        padding-right: 0;
       }
-
-      .button-group {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      .cta-btn {
+        font-size: 1em;
+        padding: 16px 0;
+        width: 90vw;
+        min-width: 0;
+        max-width: 100vw;
       }
-
-      .button {
-        width: 100%;
-        max-width: 300px;
-        margin: 8px 0;
-        padding: 12px 20px;
-        font-size: 0.95em;
+      section, .section-container {
+        padding: 0;
+        border-radius: 0;
+        margin: 24px 0 0 0;
       }
-
-      .testimonial {
-        width: 100%;
-        margin: 0 auto;
-        box-sizing: border-box;
-        padding: 15px;
-        font-size: 0.9em;
-      }
-
-      .testimonials .carousel {
-        display: grid;
-        grid-template-columns: 1fr;
-        max-width: 400px;
-        margin: 0 auto;
-        gap: 15px;
-      }
-
-      .bonus {
-        padding: 20px;
-      }
-
-      .bonus h2 {
-        font-size: 1.6em;
-      }
-
-      .bonus::before {
-        font-size: 60px;
-      }
-
-      .bonus::after {
-        font-size: 40px;
-      }
-
-      iframe {
-        height: 300px;
-      }
-
       ul {
-        padding-left: 20px;
-        text-align: left;
+        padding-left: 18px;
       }
-
-      li {
-        margin-bottom: 15px;
+      .testimonials .carousel {
+        gap: 12px;
       }
     }
-
-    /* Add fun animations */
-    @keyframes float {
-        0% { transform: translateY(0px); }
-        50% { transform: translateY(-10px); }
-        100% { transform: translateY(0px); }
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(1.05); }
-        100% { transform: scale(1); }
-    }
-
-    /* Add highlight effect for What You Get section */
-    .highlight {
-        color: #e67e22;
-        font-weight: bold;
-        position: relative;
-        z-index: 1;
-    }
-
-    .highlight::after {
-        content: '';
-        position: absolute;
-        bottom: -2px;
-        left: 0;
-        width: 100%;
-        height: 4px;
-        background: linear-gradient(90deg, #f1c40f, #f39c12);
-        z-index: -1;
-        transform: scaleX(0);
-        transition: transform 0.3s ease;
-    }
-
-    li:hover .highlight::after {
-        transform: scaleX(1);
-    }
-
-    /* Mobile responsive styles */
-    @media (max-width: 380px) {
-        h1 {
-            font-size: 1.6em;
-        }
-
-        h2 {
-            font-size: 1.3em;
-        }
-
-        .button {
-            font-size: 0.9em;
-            padding: 10px 15px;
-        }
-
-        iframe {
-            height: 250px;
-        }
-    }
-
-    .floating-cta {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: linear-gradient(135deg, #F2A65A, #C76C42);
-        color: white;
-        padding: 12px 24px;
-        border-radius: 50px;
-        text-decoration: none;
-        font-weight: bold;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        z-index: 1000;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .floating-cta:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    body.dark .floating-cta {
-        background: linear-gradient(135deg, #4E7461, #79A9D1);
-    }
-
-    @media (max-width: 768px) {
-        .floating-cta {
-            bottom: 10px;
-            right: 10px;
-            padding: 10px 20px;
-            font-size: 0.9em;
-        }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.3em;
+        text-align: center;
+      }
+      .main-container {
+        padding: 0 3vw 12px 3vw;
+      }
+      .video-center {
+        padding-left: 0;
+        padding-right: 0;
+      }
+      .cta-btn {
+        font-size: 1em;
+        padding: 14px 0;
+        width: 96vw;
+        min-width: 0;
+        max-width: 100vw;
+      }
+      section, .section-container {
+        margin: 18px 0 0 0;
+      }
+      ul {
+        padding-left: 12px;
+      }
     }
   </style>
 </head>
 <body>
-  <button id="theme-toggle" onclick="toggleTheme()">Toggle Theme</button>
-  <header>
-    <h1>Understand the Québec Accent with Etien !</h1>
-    <p>Speak naturally, understand everything, and feel confident in Québec.</p>
-  </header>
-
-  <section>
-    <h2>Watch How I Can Help You 👇</h2>
-    <iframe 
-      src="https://www.youtube.com/embed/ivBVwx9ecnI"
-      title="Introduction to Québec French Lessons"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen>
-    </iframe>
-  </section>
-
-  <section>
-    <h2>What You Get</h2>
-    <ul>
-      <li><span class="highlight">1-on-1 Private Coaching:</span> Focused sessions to master the Québec accent, slang, and natural flow. Personalized for your level (A1–C2).</li>
-      <li><span class="highlight">Weekly Group Class:</span> Live Sunday sessions to practice and connect with others.</li>
-      <li><span class="highlight">Flashcard Game Access:</span> Interactive audio flashcards to sharpen listening, reading, writing, speaking, and vocabulary skills.</li>
-      <li><span class="highlight">Voice Note Feedback:</span> Send audio clips and receive corrections + tips anytime.</li>
-    </ul>
-  </section>
-
-  <div class="section-container">
-    <div class="bonus">
-      <h2>Free Bonus</h2>
-
-      <p><strong>📺 Learn On YouTube</strong></p>
-      <a href="https://www.youtube.com/@QuebecFrench" target="_blank">Watch Free Video Lessons →</a>
+  <div class="main-container">
+    <header>
+      <h1>Apprends le Francais Québécois avec Etien!</h1>
+    </header>
+    <div class="video-center">
+      <iframe 
+        src="https://www.youtube.com/embed/ivBVwx9ecnI"
+        title="Introduction to Québec French Lessons"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        style="width:100%;max-width:800px;height:360px;border-radius:12px;box-shadow:none;margin:24px 0;display:block;">
+      </iframe>
     </div>
-  </div>
-
-  <section class="testimonials">
-    <h2>Real Results from Real Students</h2>
-    <div class="carousel-container">
+    <section>
+      <h2>What You Get</h2>
+      <ul>
+        <li><span class="highlight">1-on-1 Private Coaching:</span> Focused sessions to master the Québec accent, slang, and natural flow. Personalized for your level (A1–C2).</li>
+        <li><span class="highlight">Exam Prep:</span> I can help you prepare for the TEF or TCF exam.</li>
+        <li><span class="highlight">Beginner Friendly:</span> I can help absolute beginners get started with confidence.</li>
+      </ul>
+    </section>
+    <a class="cta-btn" href="https://polytripper.com/teacher.php?teacher_id=u5742961" style="margin-top:32px; margin-bottom:56px;">Start Your Journey</a>
+    <section class="testimonials">
+      <h2>Real Results from Real Students</h2>
       <div class="carousel">
-        <div class="testimonial"><strong>思伊 ساية Siyi / Sayeh</strong><div class="stars">★★★★★</div>Etien is incredibly patient and accommodating... fun and effective way to increase my exposure to Quebec French.</div>
-        <div class="testimonial"><strong>Efra</strong><div class="stars">★★★★★</div>Very patient, friendly and knowledgeable teacher. Can't wait for the next lesson!!</div>
-        <div class="testimonial"><strong>Alaina Franco</strong><div class="stars">★★★★★</div>Etien is a great teacher and I will enjoy working with him! Merci beaucoup!</div>
-        <div class="testimonial"><strong>Mateus Ferreira</strong><div class="stars">★★★★☆</div>Excellent professeur.</div>
-        <div class="testimonial"><strong>D.J.</strong><div class="stars">★★★★★</div>Very easy to talk to, provides great feedback, and just fun — thank you, Etien!</div>
-        <div class="testimonial"><strong>Meena</strong><div class="stars">★★★★★</div>I’m seeing real progress and feel more motivated already. Highly recommend!</div>
-        <div class="testimonial"><strong>James</strong><div class="stars">★★★★★</div>Etien is an excellent French teacher! Highly recommended.</div>
-        <div class="testimonial"><strong>ZhiYang Ong</strong><div class="stars">★★★★☆</div>Provided great suggestions!</div>
-        <div class="testimonial"><strong>Andrea</strong><div class="stars">★★★★★</div>Great relaxed conversation with good correction technique. Merci!</div>
+        <div class="testimonial">
+          <strong>思伊 ساية Siyi / Sayeh</strong>
+          <div class="stars">★★★★★</div>
+          Etien is incredibly patient and accommodating. As a professional musician, he speaks clearly and naturally, which really helps me since my primary goal is to improve my listening comprehension and learn everyday expressions, rather than formal textbook French. His high-quality microphone setup and lesson notes make practicing listening and shadowing much easier. I also appreciate his music recommendations, as they provide a fun and effective way to increase my exposure to Quebec French and get more natural input.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 2, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Efra</strong>
+          <div class="stars">★★★★★</div>
+          Very patient, friendly and knowledgeable teacher. Very laid back and wonderful to talk to. Can't wait for the next lesson!! Thank you Etien!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 26, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Rolando Rossi</strong>
+          <div class="stars">★★★★★</div>
+          I had a great first class with Etien. He did an amazing job explaining things. I'm excited to take more classes with him in the future!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jun 7, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Dennys Sabando</strong>
+          <div class="stars">★★★★★</div>
+          I just had my first class with Etien and I highly recommend him. He's very attentive and makes the class very entertaining. I'll definitely book more classes with Etien!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">May 9, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Sheida</strong>
+          <div class="stars">★★★★★</div>
+          Crème de la crème
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">May 1, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>James Zhang</strong>
+          <div class="stars">★★★★★</div>
+          Superb
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 19, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Andrew Jacob Heakes</strong>
+          <div class="stars">★★★★★</div>
+          Good guy, easy to be comfortable speaking with him.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 16, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>思伊 ساية Siyi / Sayeh</strong>
+          <div class="stars">★★★★★</div>
+          Learning Quebec rap lyrics is a lot of fun. I am really grateful to have found Etien on this platform. He provided a lot of listening input for me, with lots of patience and kindness. This experience also gives me a valuable opportunity to learn about the rap culture in Quebec from a musician.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 13, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Alaina Franco</strong>
+          <div class="stars">★★★★★</div>
+          Etien is a great teacher and I will enjoy working with him! Merci beaucoup!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 5, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Mateus Ferreira</strong>
+          <div class="stars">★★★★★</div>
+          excellent professeur.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 23, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>JOHN MOORE</strong>
+          <div class="stars">★★★★★</div>
+          C'est tres bon
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 21, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>D.J.</strong>
+          <div class="stars">★★★★★</div>
+          Had my first lesson with Etien and can honestly say he is amazing! Very easy to have a conversation with, provides great feedback, encourages engagement in French the entire time, and just fun - Thank you, Etien!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 5, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Meena</strong>
+          <div class="stars">★★★★★</div>
+          I had a great lesson with Etien! He is a patient and engaging. He tailored the session to my specific goals and gave clear explanations when I had questions. I appreciated his ability to correct my mistakes in a constructive and encouraging way. I left the lesson feeling so much more motivated to keep improving!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 30, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Leo</strong>
+          <div class="stars">★★★★★</div>
+          Merci pour cette conversation intéressante. J'aime beaucoup ton accent québécois. A La prochaine!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 29, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Meena</strong>
+          <div class="stars">★★★★★</div>
+          Really fun/chill first lesson/trial! Etien provides great feedback and corrections where necessary, without losing the conversation. :)
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 27, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Meena</strong>
+          <div class="stars">★★★★★</div>
+          After just two lessons so far, I’m seeing real progress, I feel a lot more motivated, and I am excited to continue improving. Highly recommend Etien to anyone looking to boost their conversation level and, in turn, their confidence!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Feb 3, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Ryan Whitney</strong>
+          <div class="stars">★★★★★</div>
+          Good teacher! Very helpful with pronunciation and vocab!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jun 12, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>abrown945</strong>
+          <div class="stars">★★★★★</div>
+          I really enjoyed how personalized my lesson was immediately. I was given lots of opportunities to speak and was corrected in a gentle way that left me feeling unafraid to continue speaking.<br><br>
+          Very efficient manner of teaching that quickly adapted to my needs<br><br>
+          Super fun tutor and full of energy, very much recommend!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jun 7, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Kari</strong>
+          <div class="stars">★★★★★</div>
+          Very friendly, I enjoyed this lesson, and I can understand now why I have trouble understanding Quebecois as Etien was explaining to me why it sounds the way it does.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">May 5, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Anderson Silva</strong>
+          <div class="stars">★★★★★</div>
+          "Très bon professeur, j’ai planifié un autre cours avec lui."
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 24, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>思伊 ساية Siyi / Sayeh</strong>
+          <div class="stars">★★★★★</div>
+          Etien is an amazing teacher and has a natural talent for teaching. I love how he breaks down lyrics and explains their context. He also recommends songs that are great for French learners and especially for those interested in learning French from real life, as well as music and pop culture in Quebec.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 18, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>joao vicente vitola</strong>
+          <div class="stars">★★★★★</div>
+          Excelente professor.  Aula muito agradável
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 15, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>James Zhang</strong>
+          <div class="stars">★★★★★</div>
+          meilleur professeur de français!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 5, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>James Zhang</strong>
+          <div class="stars">★★★★★</div>
+          Etien est le meilleur professeur de français sur Italki!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 30, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>James</strong>
+          <div class="stars">★★★★★</div>
+          Etien is an excellent French teacher! Highly recommended.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 23, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>ZhiYang Ong</strong>
+          <div class="stars">★★★★★</div>
+          Provided great suggestions!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Mar 14, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Andrea</strong>
+          <div class="stars">★★★★★</div>
+          Great relaxed conversation with good correction technique that doesn’t interrupt flow. Merci!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Feb 9, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Lenys</strong>
+          <div class="stars">★★★★★</div>
+          I had a great experience with Etien! He's friendly, patient and easy to talk to. He quickly adapted to my level of French and his explanations were clear and helpful. No stress and fun!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 30, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Daniel</strong>
+          <div class="stars">★★★★★</div>
+          Etien is a great teacher, I'm learning a lot. Would definitely recommend!
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 28, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Chika</strong>
+          <div class="stars">★★★★★</div>
+          Merci Etien!<br>
+          He has a happy and fun atmosphere and seems like it would be fun to learn with him.<br><br>
+          Good teacher🌈
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Jan 21, 2025</div>
+        </div>
+        <div class="testimonial">
+          <strong>Wanda Netherlands - French (1 lesson)</strong>
+          <div class="stars">★★★★★</div>
+          Very nice teacher! Even though I’ve studied European French, it wasn’t too difficult to understand Etien. He’s very easy to talk to, which is perfect when you want to practice conversation.
+          <div style="color:#888;font-size:0.95em;margin-top:8px;">Apr 10, 2025</div>
+        </div>
       </div>
-    </div>
-  </section>
-
-  <div class="section-container">
-    <div class="guarantee">
-      <h2>Our Guarantee</h2>
-      <p><strong>❤️ Love It or Leave It:</strong> If the first class isn’t your vibe, you’ll get a full refund — no awkwardness, no pressure.</p>
-    </div>
+    </section>
   </div>
-
-  <div class="button-container">
-    <div class="button-group">
-      <span class="button-label">Try a free 1 on 1 Session here (15 minutes):</span>
-      <a class="button" href="https://calendly.com/etienr/quebec-french-with-etien-clone?back=1&month=2025-04">Book Free Trial</a>
-    </div>
-   
-    <div class="button-group">
-      <span class="button-label">Ready to Start Your Journey?</span>
-      <a class="button" href="https://polytripper.com/teacher.php?teacher_id=u5742961">Book Here</a>
-    </div>
-  </div>
-
-  <a href="https://calendly.com/etienr/quebec-french-with-etien-clone?back=1&month=2025-04" class="floating-cta" target="_blank">
-    📅 Book Now
-  </a>
-
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-      const themeToggle = document.getElementById('theme-toggle');
-      themeToggle.textContent = document.body.classList.contains('dark') ? 'Light Theme' : 'Dark Theme';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      const themeToggle = document.getElementById('theme-toggle');
-      themeToggle.textContent = 'Dark Theme';
-    });
-  </script>
 </body>
 </html>
